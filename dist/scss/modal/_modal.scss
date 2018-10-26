@@ -1,0 +1,77 @@
+//PopUP Modal
+.ad-modal-trigger[ad-modal] {
+    position: static; // top:0;
+}
+
+.ad-modal {
+    position: fixed; // background-color: red;
+    // width: 60%;
+    display: block;
+    max-width: 630px;
+    min-width: 320px;
+    height: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 300 !important;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    @include transEase(0.3s);
+    margin: 0;
+    padding: 0; //Effects
+
+    &.ad-blur {
+
+        // background: rgba(80,46,32,0.5);
+        &~.wrapper,
+        &~.wrapper-fluid {
+            -webkit-filter: blur(3px);
+            -moz-filter: blur(3px);
+            filter: blur(3px);
+            background-color: red;
+        }
+    }
+
+    &.ad-show {
+        top: 50%;
+        animation: anim-modal 0.5s 0s ease 1;
+
+        &.ad-closemodal {
+            animation-direction: reverse;
+            animation: anim-modal 0.5s 0s ease 1;
+        }
+    }
+}
+
+
+.ad-show {
+    visibility: visible;
+
+    &+.ad-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &+.ad-body {
+        max-height: 500px;
+    }
+}
+
+.ad-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100 !important;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    @include transEase(0.3s);
+}

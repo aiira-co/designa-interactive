@@ -1,0 +1,11 @@
+@keyframes anim-modal {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}

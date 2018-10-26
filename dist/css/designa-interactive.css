@@ -1,0 +1,261 @@
+/*
+   ** Web Designa Interactive
+   ** Author: Kofi Owusu-Afriyie
+   **Version: 2.5.0
+
+*/
+/* BASE-- base, variables, mixins, normalize */
+/* COLORS PRESETS  */
+/* COLORS Buttons*/
+.ad-dropdown {
+  position: relative;
+  display: inline-block; }
+  .ad-dropdown .ad-content {
+    position: absolute;
+    min-width: 200px;
+    top: 50%;
+    z-index: 100;
+    display: none;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    -o-transform-origin: 50% 0;
+    transform-origin: 50% 0; }
+    .ad-dropdown .ad-content.ad-show {
+      animation: anim-dropdown 0.3s ease-out 0s 1; }
+
+@keyframes anim-dropdown {
+  from {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.7);
+    -o-transform: scale(0.8);
+    transition: scale(0.8); }
+  to {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(0.9);
+    -o-transform: scale(1);
+    transition: scale(1); } }
+.ad-modal-trigger[ad-modal] {
+  position: static; }
+
+.ad-modal {
+  position: fixed;
+  display: block;
+  max-width: 630px;
+  min-width: 320px;
+  height: auto;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 300 !important;
+  visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  margin: 0;
+  padding: 0; }
+  .ad-modal.ad-blur ~ .wrapper, .ad-modal.ad-blur ~ .wrapper-fluid {
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    filter: blur(3px);
+    background-color: red; }
+  .ad-modal.ad-show {
+    top: 50%;
+    animation: anim-modal 0.5s 0s ease 1; }
+    .ad-modal.ad-show.ad-closemodal {
+      animation-direction: reverse;
+      animation: anim-modal 0.5s 0s ease 1; }
+
+.ad-show {
+  visibility: visible; }
+  .ad-show + .ad-overlay {
+    opacity: 1;
+    visibility: visible; }
+  .ad-show + .ad-body {
+    max-height: 500px; }
+
+.ad-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100 !important;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s; }
+
+@keyframes anim-modal {
+  from {
+    top: 0;
+    opacity: 0; }
+  to {
+    top: 50%;
+    opacity: 1; } }
+@media screen and (max-width: 32em) {
+  body {
+    font-size: 75%; } }
+.ad-accordian {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  padding: 0; }
+  .ad-accordian .ad-head {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.5);
+    line-height: 2.4em;
+    padding: 0 1.2em;
+    margin: 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(34, 44, 55, 0.2); }
+    .ad-accordian .ad-head i {
+      margin-right: 8px;
+      -webkit-transition: all 0.3s ease-out 0s;
+      -moz-transition: all 0.3s ease-out 0s;
+      -o-transition: all 0.3s ease-out 0s;
+      transition: all 0.3s ease-out 0s; }
+    .ad-accordian .ad-head.ad-show {
+      border-color: #28d0ea; }
+      .ad-accordian .ad-head.ad-show i {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transition: rotate(180deg); }
+      .ad-accordian .ad-head.ad-show + .ad-body {
+        animation: anim-accordian 0.3s ease-out 0s 1;
+        max-height: 1000px; }
+  .ad-accordian .ad-body {
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin-bottom: 3px;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s; }
+    .ad-accordian .ad-body p {
+      padding: 16px; }
+
+@keyframes anim-accordian {
+  from {
+    max-height: 0; }
+  to {
+    max-height: 100px; } }
+.ad-tab-group {
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 100; }
+  .ad-tab-group > * {
+    display: none;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s; }
+  .ad-tab-group[_adconstructed] > * {
+    display: block;
+    opacity: 1; }
+  .ad-tab-group > .ad-head {
+    display: block;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative; }
+    .ad-tab-group > .ad-head span.tab-line {
+      background-color: #28d0ea;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      width: 100px;
+      -webkit-transition: all 0.3s ease-out 0s;
+      -moz-transition: all 0.3s ease-out 0s;
+      -o-transition: all 0.3s ease-out 0s;
+      transition: all 0.3s ease-out 0s; }
+    .ad-tab-group > .ad-head ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex; }
+    .ad-tab-group > .ad-head li {
+      background-color: transparent;
+      border-radius: 3px 3px 0 0;
+      border-bottom: 2px solid transparent;
+      opacity: 0.5;
+      line-height: 2.4em;
+      padding: 0 16px;
+      margin: 0;
+      vertical-align: top;
+      outline: none !important;
+      cursor: pointer;
+      -webkit-transition: all 0.3s ease-out 0s;
+      -moz-transition: all 0.3s ease-out 0s;
+      -o-transition: all 0.3s ease-out 0s;
+      transition: all 0.3s ease-out 0s; }
+      .ad-tab-group > .ad-head li.active {
+        opacity: 1; }
+  .ad-tab-group > .ad-content {
+    display: flex;
+    width: 400%;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s; }
+    .ad-tab-group > .ad-content .ad-tab,
+    .ad-tab-group > .ad-content ad-tab {
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid rgba(34, 44, 55, 0.2);
+      margin-top: -1px;
+      width: 100%;
+      -webkit-transition: all 0.3s ease-out 0s;
+      -moz-transition: all 0.3s ease-out 0s;
+      -o-transition: all 0.3s ease-out 0s;
+      transition: all 0.3s ease-out 0s; }
+      .ad-tab-group > .ad-content .ad-tab.ad-show,
+      .ad-tab-group > .ad-content ad-tab.ad-show {
+        display: flex;
+        opacity: 1; }
+
+.ad-tab.ad-block .ad-head li {
+  border-radius: 0; }
+  .ad-tab.ad-block .ad-head li.active {
+    border-color: transparent; }
+.ad-tab.ad-block .ad-tab,
+.ad-tab.ad-block ad-tab {
+  border: none; }
+.ad-tab.ad-round .ad-head li.active {
+  background-color: #222c37;
+  color: white;
+  border-radius: 20px;
+  border-color: transparent; }
+.ad-tab.ad-round .ad-tab,
+.ad-tab.ad-round ad-tab {
+  border: none; }
+  .ad-tab.ad-round .ad-tab.ad-show,
+  .ad-tab.ad-round ad-tab.ad-show {
+    background-color: transparent; }
+
+/*# sourceMappingURL=designa-interactive.css.map */

@@ -1,0 +1,41 @@
+.ad-tab {
+    &.ad-block {
+        .ad-head {
+            li {
+                border-radius: 0;
+
+                &.active {
+                    border-color: transparent;
+                }
+            }
+        }
+
+        .ad-tab,
+        ad-tab {
+            border: none;
+        }
+    }
+
+    &.ad-round {
+        .ad-head {
+
+            // border: 1px solid rgba($dark,.3);
+            // border-radius: 20px;
+            li.active {
+                background-color: $dark;
+                color: white;
+                border-radius: 20px;
+                border-color: transparent;
+            }
+        }
+
+        .ad-tab,
+        ad-tab {
+            border: none;
+
+            &.ad-show {
+                background-color: transparent;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@keyframes anim-dropdown {
+    from {
+        @include scale(0.8);
+    }
+
+    to {
+        @include scale(1);
+    }
+}

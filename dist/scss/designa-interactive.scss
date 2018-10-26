@@ -1,0 +1,22 @@
+/*
+   ** Web Designa Interactive
+   ** Author: Kofi Owusu-Afriyie
+   **Version: 2.5.0
+
+*/
+/* BASE-- base, variables, mixins, normalize */
+@import '../../../designa-core/dist/scss/core/_variables.scss';
+@import '../../../designa-core/dist/scss/core/_mixins.scss';
+// dropdown
+@import 'dropdown/_dropdown.scss';
+@import 'dropdown/_animation.scss';
+// modal
+@import 'modal/_modal.scss';
+@import 'modal/_animation.scss';
+@import 'modal/_responsive.scss';
+// accordian
+@import 'accordian/_accordian.scss';
+@import 'accordian/_animation.scss';
+// tab
+@import 'tab/_tab.scss';
+@import 'tab/_shape.scss';

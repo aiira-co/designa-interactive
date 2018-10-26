@@ -1,0 +1,94 @@
+// TABS
+.ad-tab-group {
+    // background-color: red;
+    display: block;
+    overflow: hidden; // width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 100;
+
+    // hide for the sake of construction
+    &>* {
+        display: none;
+        opacity: 0;
+        // background-color: red;
+        @include transEase(0.3s);
+    }
+
+    &[_adconstructed]>* {
+        display: block;
+        opacity: 1;
+        // background-color: green;
+    }
+
+    &>.ad-head {
+        // background-color: yellow;
+        display: block;
+        width: 100%; // height: 30px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+
+        span.tab-line {
+            background-color: $prim;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            width: 100px;
+            @include transEase(0.3s);
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex; // width: 200%;
+        }
+
+        li {
+            background-color: transparent;
+            border-radius: 3px 3px 0 0;
+            border-bottom: 2px solid transparent;
+            opacity: 0.5; // display: inline-block;
+            line-height: 2.4em;
+            padding: 0 16px;
+            margin: 0;
+            vertical-align: top;
+            outline: none !important;
+            cursor: pointer;
+            @include transEase(0.3s);
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+    &>.ad-content {
+        display: flex; // flex-wrap: wrap;
+        width: 400%;
+        margin: 0;
+        padding: 0;
+        @include transEase(0.3s);
+
+        .ad-tab,
+        ad-tab {
+            margin: 0;
+            padding: 0;
+            border-top: 1px solid rgba($dark, 0.2);
+            margin-top: -1px; // opacity: 0;
+            // display: none;
+            width: 100%;
+            @include transEase(0.3s);
+
+            &.ad-show {
+                // background-color: rgba(white, .5);
+                display: flex;
+                opacity: 1;
+            }
+        }
+    }
+}
