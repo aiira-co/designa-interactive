@@ -1,17 +1,18 @@
 //Accoordian
 .ad-accordian {
-    background-color: rgba(white, 0.5);
+    // background-color: rgba(white, 0.5);
     margin: 0;
     padding: 0;
 
     .ad-head {
         display: block;
-        background-color: rgba(white, 0.5); // color:white;
+        position: relative;
+        // background-color: rgba(white, 0.5); 
+        // color:white;
         line-height: 2.4em;
-        padding: 0 1.2em;
+        padding: 4px 1.2em;
         margin: 0;
         cursor: pointer;
-        border-bottom: 1px solid rgba($dark, 0.2);
 
         i {
             margin-right: 8px;
@@ -19,15 +20,33 @@
         }
 
         &.ad-show {
-            border-color: $prim;
+            background-color: white;
+
+            @include shadow(0, 0, 8px, 1px, rgba(0, 0, 0, 0.1));
+
+            &:after {
+                position: absolute;
+                bottom: -4px;
+                width: 8px;
+                height: 8px;
+                border-radius: 3px;
+                left: 13px;
+                content: '';
+                background-color: white;
+                transform: rotateZ(45deg);
+                z-index: 10;
+
+            }
 
             i {
                 @include rotate(180deg);
             }
 
             &+.ad-body {
+                background-color: rgba(black, 0.1);
                 animation: anim-accordian 0.3s ease-out 0s 1;
                 max-height: 1000px;
+                // border-color: $prim;
             }
         }
     }
@@ -36,13 +55,44 @@
         display: block;
         margin: 0;
         padding: 0;
+        padding-left: 16px;
         max-height: 0;
         overflow: hidden;
         margin-bottom: 3px;
         @include transEase(0.3s);
 
+        position: relative;
+
+        &:after {
+            display: block;
+            position: absolute;
+            left: 16px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background-color: white;
+            content: '';
+        }
+
         p {
             padding: 16px;
         }
+
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+
+    // flat design
+
+    &.ad-flat {
+        .ad-head {
+
+            &.ad-show {
+                box-shadow: none;
+            }
+
+        }
+
     }
 }

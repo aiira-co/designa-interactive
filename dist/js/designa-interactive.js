@@ -98,7 +98,7 @@ $(document).ready(function () {
                     // console.log('size of tabl is:', adTabSize);
                     // construct the head
                     let head =
-                        '<div class="ad-head"><span class="tab-line"></span><ul style="width:' +
+                        '<div class="ad-head"><ul style="width:' +
                         100 * adTabSize +
                         '%">' +
                         list +
@@ -106,25 +106,25 @@ $(document).ready(function () {
                     $(this).prepend(head);
 
                     // Set width for default line
-                    $(this)
-                        .find('.ad-head span.tab-line')
-                        .css(
-                            'width',
-                            $(this)
-                            .find('.ad-head li.active')
-                            .width() +
-                            32 +
-                            'px'
-                        );
+                    // $(this)
+                    //     .find('.ad-head span.tab-line')
+                    //     .css(
+                    //         'width',
+                    //         $(this)
+                    //         .find('.ad-head li.active')
+                    //         .width() +
+                    //         32 +
+                    //         'px'
+                    //     );
 
-                    // wrapp all .ad-tab with a content div to make it flex
-                    let tabContainer = $(
-                        '<div class="ad-content" style="width:' +
-                        100 * adTabSize +
-                        '%"></div>'
-                    );
-                    $('.ad-tab[label], ad-tab[label]').wrapAll(tabContainer);
                 }
+                // wrapp all .ad-tab with a content div to make it flex
+                let tabContainer = $(
+                    '<div class="ad-body" style="width:' +
+                    100 * adTabSize +
+                    '%"></div>'
+                );
+                $('.ad-tab[label]').wrapAll(tabContainer);
 
                 // Mark as Constructed
                 $(this).attr('tabs', adTabSize);
@@ -138,7 +138,7 @@ $(document).ready(function () {
         function () {
             // console.log('tab clicked', $(this).width());
             slideTab(
-                $(this).parents('.ad-tab-group, ad-tab-group'),
+                $(this).parents('.ad-tab-group'),
                 $(this).attr('tabIndex'),
                 1
             );
@@ -152,19 +152,19 @@ $(document).ready(function () {
                 .siblings()
                 .removeClass('active');
             $(this).addClass('active');
-            $(this)
-                .parent()
-                .siblings('span.tab-line')
-                .css({
-                    width: $(this).width() + 32 + 'px',
-                    'margin-left': $(this).attr('tabIndex') * ($(this).width() + 32) + 'px'
-                });
+            // $(this)
+            //     .parent()
+            //     .siblings('span.tab-line')
+            //     .css({
+            //         width: $(this).width() + 32 + 'px',
+            //         'margin-left': $(this).attr('tabIndex') * ($(this).width() + 32) + 'px'
+            //     });
         }
     );
 
     function slideTab(tab, index, direction) {
         // console.log('slide function activated', (-100 * parseInt(index)));
-        tab.find('.ad-content').css('margin-left', -100 * parseInt(index) + '%');
+        tab.find('.ad-body').css('margin-left', -100 * parseInt(index) + '%');
     }
 
     //ad-cardView Toggle

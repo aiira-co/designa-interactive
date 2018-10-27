@@ -1,0 +1,25 @@
+.ad-accordian {
+    &.bg-dark {
+        @include accordianBgColor($dark);
+    }
+
+    &.bg-white {
+        @include accordianBgColor(white);
+    }
+
+    &.bg-blue {
+        @include accordianBgColor($blue);
+    }
+
+    &.bg-prim {
+        @include accordianBgColor($prim);
+    }
+
+    &.bg-pink {
+        @include accordianBgColor($pink);
+    }
+
+    &.bg-tgreen {
+        @include accordianBgColor($tGreen);
+    }
+}

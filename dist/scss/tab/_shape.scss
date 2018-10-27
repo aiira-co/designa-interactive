@@ -1,4 +1,4 @@
-.ad-tab {
+.ad-tab-group {
     &.ad-block {
         .ad-head {
             li {
@@ -10,10 +10,6 @@
             }
         }
 
-        .ad-tab,
-        ad-tab {
-            border: none;
-        }
     }
 
     &.ad-round {
@@ -21,21 +17,16 @@
 
             // border: 1px solid rgba($dark,.3);
             // border-radius: 20px;
-            li.active {
-                background-color: $dark;
-                color: white;
+            li {
                 border-radius: 20px;
-                border-color: transparent;
+
+                &.active {
+
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
             }
         }
 
-        .ad-tab,
-        ad-tab {
-            border: none;
-
-            &.ad-show {
-                background-color: transparent;
-            }
-        }
     }
 }

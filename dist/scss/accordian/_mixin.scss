@@ -1,0 +1,20 @@
+@mixin accordianBgColor($color) {
+    .ad-head {
+        &.ad-show {
+            background-color: lighten($color, 5);
+
+            &:after {
+                background-color: lighten($color, 5);
+
+               
+            }
+
+        }
+    }
+
+    .ad-body {
+        &:after {
+            background-color: lighten($color, 5);
+        }
+    }
+}

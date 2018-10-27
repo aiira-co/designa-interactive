@@ -1,0 +1,25 @@
+.ad-tab-group {
+    &.bg-dark {
+        @include tabBgColor($dark);
+    }
+
+    &.bg-white {
+        @include tabBgColor(white);
+    }
+
+    &.bg-blue {
+        @include tabBgColor($blue);
+    }
+
+    &.bg-prim {
+        @include tabBgColor($prim);
+    }
+
+    &.bg-pink {
+        @include tabBgColor($pink);
+    }
+
+    &.bg-tgreen {
+        @include tabBgColor($tGreen);
+    }
+}

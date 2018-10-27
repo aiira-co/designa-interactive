@@ -44,41 +44,67 @@
         ul {
             margin: 0;
             padding: 0;
+            padding-top: 2px;
             list-style: none;
             display: flex; // width: 200%;
         }
 
         li {
-            background-color: transparent;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.3);
             border-radius: 3px 3px 0 0;
             border-bottom: 2px solid transparent;
             opacity: 0.5; // display: inline-block;
             line-height: 2.4em;
-            padding: 0 16px;
+            padding: 4px 16px;
+            border-radius: 5px;
             margin: 0;
+            margin-right: 2px;
             vertical-align: top;
             outline: none !important;
             cursor: pointer;
             @include transEase(0.3s);
+            @include scale(0.8);
+
 
             &.active {
+                background-color: white;
                 opacity: 1;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                @include scale(1);
+                @include shadow(0, 0, 8px, 1px, rgba(0, 0, 0, 0.1));
+
+                &:after {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    bottom: -5px;
+                    background-color: white;
+                    left: 0;
+                    right: 0;
+                    height: 10px;
+                    box-shadow: none;
+
+                }
+
             }
         }
     }
 
-    &>.ad-content {
+    &>.ad-body {
         display: flex; // flex-wrap: wrap;
         width: 400%;
         margin: 0;
         padding: 0;
+        background-color: white;
         @include transEase(0.3s);
+        @include shadow(0, 0, 8px, 1px, rgba(0, 0, 0, 0.1));
 
-        .ad-tab,
-        ad-tab {
+        .ad-tab {
             margin: 0;
             padding: 0;
-            border-top: 1px solid rgba($dark, 0.2);
+            // border-top: 1px solid rgba($dark, 0.2);
             margin-top: -1px; // opacity: 0;
             // display: none;
             width: 100%;
@@ -89,6 +115,25 @@
                 display: flex;
                 opacity: 1;
             }
+        }
+    }
+
+    // flat design
+
+    &.ad-flat {
+        .ad-head {
+            ul {
+                li {
+                    &.active {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        .ad-body {
+            box-shadow: none;
+
         }
     }
 }

@@ -1,0 +1,20 @@
+@mixin tabBgColor($color) {
+    .ad-head {
+        ul {
+            li {
+                &.active {
+                    background-color: lighten($color, 5);
+
+                    &:after {
+
+                        background-color: lighten($color, 5);
+                    }
+                }
+            }
+        }
+    }
+
+    .ad-body {
+        background-color: lighten($color, 5);
+    }
+}

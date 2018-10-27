@@ -16,7 +16,11 @@
 @import 'modal/_responsive.scss';
 // accordian
 @import 'accordian/_accordian.scss';
+@import 'accordian/_mixin.scss';
+@import 'accordian/_color.scss';
 @import 'accordian/_animation.scss';
 // tab
 @import 'tab/_tab.scss';
+@import 'tab/_mixin.scss';
 @import 'tab/_shape.scss';
+@import 'tab/_color.scss';
