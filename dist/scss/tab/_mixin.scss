@@ -1,5 +1,5 @@
 @mixin tabBgColor($color) {
-    .ad-head {
+    .#{$classPrefix}-head {
         ul {
             li {
                 &.active {
@@ -14,7 +14,7 @@
         }
     }
 
-    .ad-body {
+    .#{$classPrefix}-body {
         background-color: lighten($color, 5);
     }
 }

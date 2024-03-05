@@ -1,4 +1,4 @@
-.ad-accordian {
+.#{$classPrefix}-accordian {
     &.bg-dark {
         @include accordianBgColor($dark);
     }

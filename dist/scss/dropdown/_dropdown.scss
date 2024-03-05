@@ -1,9 +1,9 @@
 // dropdown
-.ad-dropdown {
+.#{$classPrefix}-dropdown {
     position: relative;
     display: inline-block; // background-color: red;
 
-    .ad-content {
+    .#{$classPrefix}-content {
         position: absolute;
         min-width: 200px; // background-color: blue;
         top: 50%;
@@ -13,7 +13,7 @@
         @include transEase(0.3s);
         @include transformOrigin(50%, 0);
 
-        &.ad-show {
+        &.#{$classPrefix}-show {
             animation: anim-dropdown 0.3s ease-out 0s 1; // background: red;
         }
     }

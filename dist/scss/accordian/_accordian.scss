@@ -1,10 +1,10 @@
 //Accoordian
-.ad-accordian {
+.#{$classPrefix}-accordian {
     // background-color: rgba(white, 0.5);
     margin: 0;
     padding: 0;
 
-    .ad-head {
+    .#{$classPrefix}-head {
         display: block;
         position: relative;
         // background-color: rgba(white, 0.5); 
@@ -19,7 +19,7 @@
             @include transEase(0.3s);
         }
 
-        &.ad-show {
+        &.#{$classPrefix}-show {
             background-color: white;
 
             @include shadow(0, 0, 8px, 1px, rgba(0, 0, 0, 0.1));
@@ -42,7 +42,7 @@
                 @include rotate(180deg);
             }
 
-            &+.ad-body {
+            &+.#{$classPrefix}-body {
                 background-color: rgba(black, 0.1);
                 animation: anim-accordian 0.3s ease-out 0s 1;
                 max-height: 1000px;
@@ -51,7 +51,7 @@
         }
     }
 
-    .ad-body {
+    .#{$classPrefix}-body {
         display: block;
         margin: 0;
         padding: 0;
@@ -85,10 +85,10 @@
 
     // flat design
 
-    &.ad-flat {
-        .ad-head {
+    &.#{$classPrefix}-flat {
+        .#{$classPrefix}-head {
 
-            &.ad-show {
+            &.#{$classPrefix}-show {
                 box-shadow: none;
             }
 

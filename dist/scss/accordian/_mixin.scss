@@ -1,6 +1,6 @@
 @mixin accordianBgColor($color) {
-    .ad-head {
-        &.ad-show {
+    .#{$classPrefix}-head {
+        &.#{$classPrefix}-show {
             background-color: lighten($color, 5);
 
             &:after {
@@ -12,7 +12,7 @@
         }
     }
 
-    .ad-body {
+    .#{$classPrefix}-body {
         &:after {
             background-color: lighten($color, 5);
         }

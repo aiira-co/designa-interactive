@@ -1,9 +1,9 @@
 //PopUP Modal
-.ad-modal-trigger[ad-modal] {
+.#{$classPrefix}-modal-trigger[ad-modal] {
     position: static; // top:0;
 }
 
-.ad-modal {
+.#{$classPrefix}-modal {
     position: fixed; // background-color: red;
     // width: 60%;
     display: block;
@@ -24,7 +24,7 @@
     margin: 0;
     padding: 0; //Effects
 
-    &.ad-blur {
+    &.#{$classPrefix}-blur {
 
         // background: rgba(80,46,32,0.5);
         &~.wrapper,
@@ -36,11 +36,11 @@
         }
     }
 
-    &.ad-show {
+    &.#{$classPrefix}-show {
         top: 50%;
         animation: anim-modal 0.5s 0s ease 1;
 
-        &.ad-closemodal {
+        &.#{$classPrefix}-closemodal {
             animation-direction: reverse;
             animation: anim-modal 0.5s 0s ease 1;
         }
@@ -48,20 +48,20 @@
 }
 
 
-.ad-show {
+.#{$classPrefix}-show {
     visibility: visible;
 
-    &+.ad-overlay {
+    &+.#{$classPrefix}-overlay {
         opacity: 1;
         visibility: visible;
     }
 
-    &+.ad-body {
+    &+.#{$classPrefix}-body {
         max-height: 500px;
     }
 }
 
-.ad-overlay {
+.#{$classPrefix}-overlay {
     position: fixed;
     width: 100vw;
     height: 100vh;

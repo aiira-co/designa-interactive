@@ -1,6 +1,6 @@
-.ad-tab-group {
-    &.ad-block {
-        .ad-head {
+.#{$classPrefix}-tab-group {
+    &.#{$classPrefix}-block {
+        .#{$classPrefix}-head {
             li {
                 border-radius: 0;
 
@@ -12,8 +12,8 @@
 
     }
 
-    &.ad-round {
-        .ad-head {
+    &.#{$classPrefix}-round {
+        .#{$classPrefix}-head {
 
             // border: 1px solid rgba($dark,.3);
             // border-radius: 20px;

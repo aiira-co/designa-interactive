@@ -1,4 +1,4 @@
-.ad-tab-group {
+.#{$classPrefix}-tab-group {
     &.bg-dark {
         @include tabBgColor($dark);
     }
