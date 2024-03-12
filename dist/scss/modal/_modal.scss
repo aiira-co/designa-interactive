@@ -7,8 +7,8 @@
     position: fixed; // background-color: red;
     // width: 60%;
     display: block;
-    max-width: 630px;
-    min-width: 320px;
+    max-width: 63.0rem;
+    min-width: 32.0rem;
     height: auto;
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
@@ -29,9 +29,9 @@
         // background: rgba(80,46,32,0.5);
         &~.wrapper,
         &~.wrapper-fluid {
-            -webkit-filter: blur(3px);
-            -moz-filter: blur(3px);
-            filter: blur(3px);
+            -webkit-filter: blur(0.3rem);
+            -moz-filter: blur(0.3rem);
+            filter: blur(0.3rem);
             background-color: red;
         }
     }

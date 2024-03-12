@@ -15,22 +15,22 @@
         cursor: pointer;
 
         i {
-            margin-right: 8px;
+            margin-right: 0.8rem;
             @include transEase(0.3s);
         }
 
         &.#{$classPrefix}-show {
             background-color: white;
 
-            @include shadow(0, 0, 8px, 1px, rgba(0, 0, 0, 0.1));
+            @include shadow(0, 0, 0.8rem, 1px, rgba(0, 0, 0, 0.1));
 
             &:after {
                 position: absolute;
                 bottom: -4px;
-                width: 8px;
-                height: 8px;
-                border-radius: 3px;
-                left: 13px;
+                width: 0.8rem;
+                height: 0.8rem;
+                border-radius: 0.3rem;
+                left: 1.3rem;
                 content: '';
                 background-color: white;
                 transform: rotateZ(45deg);
@@ -55,10 +55,10 @@
         display: block;
         margin: 0;
         padding: 0;
-        padding-left: 16px;
+        padding-left: 1.6rem;
         max-height: 0;
         overflow: hidden;
-        margin-bottom: 3px;
+        margin-bottom: 0.3rem;
         @include transEase(0.3s);
 
         position: relative;
@@ -66,16 +66,16 @@
         &:after {
             display: block;
             position: absolute;
-            left: 16px;
-            top: 8px;
-            bottom: 8px;
+            left: 1.6rem;
+            top: 0.8rem;
+            bottom: 0.8rem;
             width: 2px;
             background-color: white;
             content: '';
         }
 
         p {
-            padding: 16px;
+            padding: 1.6rem;
         }
 
 
